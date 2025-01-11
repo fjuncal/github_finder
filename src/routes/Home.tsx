@@ -8,17 +8,18 @@ export default function Home() {
   const loadUser = async (userName: string) => {
     const response = await fetch(`https://api.github.com/users/${userName}`);
     const data = await response.json();
-    const [avatar_url, login, name, location, followers, following] = data;
-    const userData: UserProps = {
-      avatar_url,
-      name,
-      login,
-      location,
-      followers,
-      following,
-    };
+    // const [avatar_url, login, name, location, followers, following] = data;
+    // const userData: UserProps = {
+    //   avatar_url,
+    //   name,
+    //   login,
+    //   location,
+    //   followers,
+    //   following,
+    // };
+    // console.log(data);
 
-    setUser(userData);
+    setUser(data);
   };
   return (
     <div>
