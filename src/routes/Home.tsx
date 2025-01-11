@@ -9,6 +9,9 @@ export default function Home() {
   const [error, setError] = useState(false);
 
   const loadUser = async (userName: string) => {
+    setError(false);
+    setUser(null);
+
     const response = await fetch(`https://api.github.com/users/${userName}`);
     const data = await response.json();
     if (response.status === 404) {
